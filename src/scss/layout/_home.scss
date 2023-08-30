@@ -1,0 +1,115 @@
+// // html, body {
+// //     height: 100%;
+// //   }
+//   .home-contenedor {
+//     min-height: 100vh;
+//   }
+    
+// .home-contenedor-pokemon{
+   
+//         width: 100%; /* Abarca todo el ancho del cuerpo */
+//         margin: 0 auto; /* Centra horizontalmente */
+//       height: 100%;
+//         display: grid;
+//         // grid-template-columns: repeat(2, 1fr);
+//         grid-template-columns: repeat(3, 1fr); /* Cambiado a 3 columnas */
+//         // grid-template-rows: repeat(3, 1fr);
+//         gap: 40px;
+      
+      
+// }
+// .home-pokemon-grid {
+//     display: grid;
+//     width: 600px;
+//     grid-template-columns: repeat(4, 1fr);
+//     display: grid;
+//     // grid-template-columns: repeat(3, 1fr); /* Cambiado a 3 columnas */
+//     // grid-template-rows: repeat(3, 1fr);
+//     gap: 20px;
+//   }
+  
+  .pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+//   .home-pokemon-card {
+    
+//     background-color: white;
+//     padding: 15px;
+//     border-radius: 10px;
+//     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+//     text-align: center;
+//     transition: transform 0.3s ease;
+//   }
+  
+//   .home-pokemon-card:hover {
+//     transform: translateY(-5px);
+//   }
+
+//   .home-pokemon-grid {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 20px;
+//   }
+  
+//   .home-pokemon-card {
+//     background-color: white;
+//     padding: 15px;
+//     border-radius: 10px;
+//     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+//     text-align: center;
+//     transition: transform 0.3s ease;
+//     cursor: pointer;
+//   }
+  
+//   .home-pokemon-card:hover {
+//     transform: translateY(-5px);
+//   }
+.home-contenedor-pokemon {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    // position: fixed;
+  }
+  
+  .home-pokemon-grid {
+    overflow: scroll;
+    object-fit: cover;
+    top: 120%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 40px;
+    padding-left: 135px;
+    width: 100%;
+	margin-bottom: 120px;
+	
+  }
+  
+  .home-pokemon-card {
+    overflow: scroll;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 250px;
+  }
+  
+  .home-pokemon-card:hover {
+    transform: translateY(-5px);
+  }
+.btn-addcart{
+gap: 20px;
+}
+.btn-view{
+  gap: 20px;
+}

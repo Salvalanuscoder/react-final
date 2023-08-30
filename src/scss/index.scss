@@ -1,0 +1,8 @@
+@use "./components/header";
+@use "./layout/pokedex";
+@use "./layout/home";
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #e0e0e0;
+}

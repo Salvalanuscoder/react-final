@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Header {
+    background-color: 	#FF4500;
+    // position: absolute;
+    width: 100%;
+    
+    .header-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+       
+        .logo {
+            width: 80px; 
+            height: auto; 
+            margin: 0px; 
+            cursor: pointer;
+          }
+          .VerDetallesPokemon{
+            width: 120px; 
+            height: auto; 
+            margin: 0px; 
+            cursor: pointer;
+          }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.paginacion {
+    position: fixed;
+    bottom: 0;
+    background: 	#FF4500;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;}
+
+    .paginacion button {
+        cursor: pointer;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 50px;
+        width: 200px;
+        background: 	#FF8C00;
+        color: #fff;
+        border-radius: 100px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        transition: .3s ease all;
+
+        .paginacion button:hover {
+            background: 	#FFA500;
+        }
+    }
+
+    // header img {
+    //     width: 100px; /* Ancho del logo */
+    //     height: auto; /* Mantener la proporción de aspecto */
+    //     margin: 10px; /* Espacio alrededor del logo */
+    //     border: 1px solid #ccc; /* Borde alrededor del logo */
+    //     border-radius: 5px; /* Borde redondeado */
+    //     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    //   }
