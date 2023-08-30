@@ -1,58 +1,86 @@
-.pokedex-card{
+.pokedex-card {
     width: 300px;
-    height: 300px;
+    height: 350px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     border-radius: 10px;
     background-color: white;
-    
+
     .pokedex-card-img {
         position: relative;
         display: grid;
         place-content: center;
         height: 100%;
 
-      
+
         img {
             z-index: 2;
             width: 120px;
             height: 120px;
         }
+
         svg {
             position: absolute;
             width: 100%;
-            
+
             height: fit-content;
             z-index: 1;
         }
     }
+    .idPokemon{
+        display: flex;
+        justify-content: center;
+        margin-top: 4px;
+    }
+    .namePokemon{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3px;
+    }
+    .pokedex-card-types{
+        gap: 10px;
+    }
+
     .pokedex-card-types {
         display: flex;
         justify-content: center;
-        .pokedex-card-type{
+
+        .pokedex-card-type {
             border-radius: 10px;
             width: 60px;
-        
-           display:grid;
-           place-content: center;
+
+            display: grid;
+            place-content: center;
         }
     }
+
     .pokedex-card-btn {
         display: flex;
         justify-content: center;
         margin: 20px;
         gap: 10px;
-      
-        button{
-            width: 80px;
-            border-radius:10px;
-            border: none;
-            background-color: aqua;
-            border-radius: 10px;
-            padding: 10px;
-        }
     }
 
+    button {
+        width: 80px;
+        border: none;
+        background-color: #FF8C00;
+        border-radius: 10px;
+        padding: 4px;
+        margin: 5px 0;
+        cursor: pointer;
+    }
+
+    .Add-Cart-Btn {
+        position: relative;
+        left: 110px;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 10px;
+        gap: 10px;
+    }
 }

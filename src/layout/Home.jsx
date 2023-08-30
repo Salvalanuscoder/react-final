@@ -5,13 +5,15 @@ const PokemonCard = ({ pokemon }) => (
   <div className="home-pokemon-card">
     <img src={pokemon.image} alt={pokemon.name} />
     <p>{pokemon.name}</p>
-    <button className="btn-addcart" onClick={() => handleAddToCart(pokemon.name)}>Add Cart</button>
+
+    <div className="button-container">
+    <button className="Add-Cart-Btn" onClick={() => handleAddToCart(pokemon.name)}>Add Cart</button>
     {/* <button className="btn-viewstatus" onClick={() => handleViewStats(pokemon.name)}>View Status</button> */}
  
-    {/* <Link to="/pokedex">
-      <button className="btn-viewstatus">View Status</button>
-    </Link> */}
-
+    <Link to="/pokedex">
+      <button className="Btn-Stats">Stats</button>
+    </Link>
+</div>
   </div>
 );
 
@@ -58,7 +60,7 @@ export const Home = () => {
     <>
       <div className='home-pokemon-contenedor'>
 
-      <div>Home</div>
+   
       <div className="home-pokemon-grid">
         {pokemonData.map(pokemon => (
           <PokemonCard key={pokemon.id} pokemon={pokemon} />

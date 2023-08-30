@@ -4,6 +4,8 @@ import { useState } from "react";
 import FetchData from "../utils/FetchData";
 import getColorByType from "../utils/GetColorByType";
 import SearchBar from '../components/Search/SearchBar'; // Ajusta la ruta según tu estructura
+import { useParams } from 'react-router-dom';
+
 
 const Pokedex = () => {
     const [id, setId] = useState(1);
@@ -58,8 +60,8 @@ const Pokedex = () => {
                                         <div>Loading</div>
                                         :
                                         <div className="pokedex-card">
-                                             <div> Id: {id}</div>
-                                            <h4>{pokemon.name}</h4>
+                                             <div className="idPokemon"> Id: {id}</div>
+                                            <h4 className="namePokemon">{pokemon.name}</h4>
                                             <div className="pokedex-card-types">
                                                 {pokemon.types.map((t, i) => {
                                                     const colorType = getColorByType(t.type.name)
@@ -74,10 +76,13 @@ const Pokedex = () => {
                                                 <div>Def: {pokemon.stats[2].base_stat}</div>
                                             </div>
                                             <div className="pokedex-card-btn">
-                                                <button onClick={() => handlePrev()} className="">Anterior</button>
-                                                <button onClick={() => handleNext()} className="">Siguiente</button>
+                                                <button onClick={() => handlePrev()} className="btn-anterior">Anterior</button>
+                                                <button onClick={() => handleNext()} className="btn-siguiente">Siguiente</button>
                                             </div>
-
+                                            <>
+                                                <button className="Add-Cart-Btn">Agregar al carrito</button>
+                                            </>
+                                            
                                         </div>
 
                                 }

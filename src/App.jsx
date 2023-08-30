@@ -25,7 +25,7 @@ function App() {
           index: true
         },
         {
-          path: "/pokedex/:pokemonName",
+          path: "/pokedex",
           element: <Pokedex/>,
         }
 
