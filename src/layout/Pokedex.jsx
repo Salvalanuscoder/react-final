@@ -14,20 +14,6 @@ const Pokedex = () => {
 
     const handleNext = () => id < 151 && setId(id + 1);
     const handlePrev = () => id > 1 && setId(id - 1);
-    // const handleSearch = (e) => {
-    //     const value = parseInt(e.target.value);
-    //     if (typeof value !== "number" || value < 1 || value > 151) return setSearchId(id);
-    //     setSearchId(() => value);
-    // }
-
-    // const handleSearch = (searchValue) => {
-    //     const parsedSearchValue = parseInt(searchValue);
-    //     if (!isNaN(parsedSearchValue)) {
-    //         setId(parsedSearchValue);
-    //     } else {
-    //         // Implementa la búsqueda por nombre aquí si el valor no es un número válido
-    //     }
-    // };
     const handleSearch = async (searchValue) => {
         if (!isNaN(searchValue)) {
             setSearchId(parseInt(searchValue));
@@ -44,7 +30,7 @@ const Pokedex = () => {
     };
     return (
         <div className="container my-5">
-            <h2>Pokedex</h2>
+            
             {/* <SearchBar onSearch={(searchId) => setSearchId(searchId)} /> */}
             {/* <input type="number" onChange={(e) => handleSearch(e)} /> */}
             {/* <button onClick={() => setId(() => searchId)}>Search</button> */}
