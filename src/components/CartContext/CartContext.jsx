@@ -1,63 +1,27 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-// Definir el contexto del carrito
 const CartContext = createContext();
 
-// Acciones disponibles para modificar el carrito
-const actionTypes = {
-  ADD_TO_CART: 'ADD_TO_CART',
-  REMOVE_FROM_CART: 'REMOVE_FROM_CART',
-  UPDATE_QUANTITY: 'UPDATE_QUANTITY',
-  CLEAR_CART: 'CLEAR_CART',
+export const useCart = () => {
+  return useContext(CartContext);
 };
 
-// Reductor para gestionar el estado del carrito
-function cartReducer(state, action) {
-  switch (action.type) {
-    case actionTypes.ADD_TO_CART: {
-      const { product } = action.payload;
-      // Lógica para agregar un producto al carrito
-      // ...
-      return newState;
-    }
-    case actionTypes.REMOVE_FROM_CART: {
-      const { productTitle } = action.payload;
-      // Lógica para eliminar un producto del carrito
-      // ...
-      return newState;
-    }
-    case actionTypes.UPDATE_QUANTITY: {
-      const { productTitle, newQuantity } = action.payload;
-      // Lógica para actualizar la cantidad de un producto en el carrito
-      // ...
-      return newState;
-    }
-    case actionTypes.CLEAR_CART: {
-      // Lógica para vaciar todo el carrito
-      // ...
-      return newState;
-    }
-    default:
-      return state;
-  }
-}
+export const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
 
-// Componente proveedor del contexto del carrito
-export function CartProvider({ children }) {
-  const [cartState, dispatch] = useReducer(cartReducer, {}); // Estado inicial del carrito
+  const addToCart = (item) => {
+    setCartItems((prevCartItems) => [...prevCartItems, item]);
+  };
+
+  const removeFromCart = (item) => {
+    setCartItems((prevCartItems) => prevCartItems.filter((cartItem) => cartItem.id !== item.id));
+  };
+
+  const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
 
   return (
-    <CartContext.Provider value={{ cartState, dispatch }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, cartTotal }}>
       {children}
     </CartContext.Provider>
   );
-}
-
-// Hook personalizado para acceder al contexto del carrito
-export function useCart() {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error('useCart debe ser utilizado dentro de CartProvider');
-  }
-  return context;
-}
+};

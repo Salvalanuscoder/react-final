@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBar from '../Search/SearchBar.jsx';
+import CartWidget from '../CartWidget/CartWidget.jsx';
+// import "../../scss/components/header.scss";
 
 export const Header = ({ onSearch }) => {
     const location = useLocation();
@@ -11,6 +13,9 @@ export const Header = ({ onSearch }) => {
         <header className="Header">
             <div className='header-container'>
                 <img className='logo' src="/logo.png" alt="Logo" />
+                <div className="cart-section">
+        <CartWidget /> 
+      </div>
                 {isPokedexPage ? (
                     <nav className="navbar">
                         <Link className="navbar-link" to="/">inicio</Link>

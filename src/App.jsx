@@ -10,7 +10,8 @@ import './scss/index.scss';
 import { Home } from './layout/Home';
 import Root from './utils/Root';
 import Pokedex from './layout/Pokedex';
-
+import { Header } from './components/Header/Header'; 
+import { CartProvider } from './components/CartContext/CartContext';
 
 
 function App() {
@@ -28,11 +29,11 @@ function App() {
           path: "/pokedex",
           element: <Pokedex/>,
         }
-
       ]
     }
   ]);
   useEffect(() => {
+<Header/>
     const fetchData = () => {
       for (let i = 0; i < 151; i++) {
         fetchDataById(i);
@@ -46,7 +47,9 @@ function App() {
   }, []);
   return (<>
     <PokemonIdProvider>
+      <CartProvider>
       <RouterProvider router={router} />
+      </CartProvider>
     </PokemonIdProvider>
   </>)
 }

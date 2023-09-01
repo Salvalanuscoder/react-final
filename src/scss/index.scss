@@ -1,6 +1,7 @@
 @use "./components/header";
 @use "./layout/pokedex";
 @use "./layout/home";
+@use "./components/cartWidget";
 
 body {
 	font-family: 'Montserrat', sans-serif;

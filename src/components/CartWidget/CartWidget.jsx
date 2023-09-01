@@ -1,21 +1,28 @@
 import React from 'react';
-import { useCart } from './CartContext';
+import { useCart } from '../CartContext/CartContext';
+// import { cartIcon } from '../../../public/cartIcon.png';
+// import '../../scss/components/cartWidget.scss';
+const cartIcon = '/cartIcon.png';
+const CartWidget = () => {
+    const { cartItems, cartTotal } = useCart();
 
-function CartWidget() {
-  const { cartState } = useCart();
-
-  // Calcular la cantidad total de productos en el carrito
-  const totalItems = Object.values(cartState).reduce(
-    (total, product) => total + product.quantity,
-    0
-  );
-
-  return (
-    <div className="cart-widget">
-      <span className="cart-icon">🛒</span>
-      <span className="cart-count">{totalItems}</span>
-    </div>
-  );
-}
+    return (
+        <div className="cart-widget">
+            <div className='cart-container'>
+                <img className='cartIcon' src={cartIcon} alt="carrito de compras" />
+                <div className="item-count">{cartItems.length}</div>
+            </div>
+            <ul>
+                {cartItems.map((item) => (
+                    <li key={item.id}>
+                        {item.name} - ${item.price}
+                        <button onClick={() => removeFromCart(item)}>Eliminar</button>
+                    </li>
+                ))}
+            </ul>
+            <p>Total: ${cartTotal}</p>
+        </div>
+    );
+};
 
 export default CartWidget;

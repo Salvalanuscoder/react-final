@@ -3,7 +3,7 @@ import { useState } from "react";
 // import { pokeCard } from "./pokeCard"; 
 import FetchData from "../utils/FetchData";
 import getColorByType from "../utils/GetColorByType";
-import SearchBar from '../components/Search/SearchBar'; // Ajusta la ruta según tu estructura
+import SearchBar from '../components/Search/SearchBar'; 
 import { useParams } from 'react-router-dom';
 
 
@@ -22,7 +22,6 @@ const Pokedex = () => {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchValue.toLowerCase()}`);
                 const data = await response.json();
                 setId(data.id);
-                // Aquí también puedes actualizar otros datos relacionados con el Pokémon, como el nombre, las estadísticas, etc.
             } catch (error) {
                 console.error("Error fetching Pokémon data:", error);
             }
